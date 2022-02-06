@@ -23,8 +23,15 @@ parser.add_argument('--input_video', '-i', help='The path to the input video fil
 parser.add_argument('--output_file', '-o', help='The output file which contains the bounding boxes of the tracked objects.')
 parser.add_argument('--format', '-f', help='The format of the pictures to be saved from result of the tracking. default: png')
 parser.add_argument('--make_video', '-m', help='If True, a video will be created from the saved resultant images.')
+parser.add_argument('--from_center', default='False', help='If True, the bounding box will be drawn from center. Defualt: False')
 
 args = parser.parse_args()
+
+from_center = args.from_center
+if from_center.lower() == 'true':
+    from_center = True
+else:
+    from_center = False
 
 video_file = args.input_video
 
@@ -72,7 +79,7 @@ while True:
   # draw bounding boxes over objects
   # selectROI's default behaviour is to draw box starting from the center
   # when fromCenter is set to false, you can draw box starting from top left corner
-  bbox = cv2.selectROI('MultipleTracking', frame, False, fromCenter=False)
+  bbox = cv2.selectROI('MultipleTracking', frame, False, fromCenter=from_center)
   bboxes.append(bbox)
   print('Box {} Selected -- Press Enter to select next object or hit q to exit'.format(c))
   c += 1
