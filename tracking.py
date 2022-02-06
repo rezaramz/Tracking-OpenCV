@@ -1,3 +1,6 @@
+# Author: Mohammadreza Ramzanpour
+# email: ramzanpour.mreza@gmail.com
+
 import cv2, os
 import argparse
 import pandas as pd
