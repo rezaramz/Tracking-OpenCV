@@ -21,8 +21,8 @@ def random_color_generator(n: int):
 parser = argparse.ArgumentParser(description='Object tracking program. Author: Mohammadreza Ramzanpour')
 parser.add_argument('--input_video', '-i', help='The path to the input video file.')
 parser.add_argument('--output_file', '-o', help='The output file which contains the bounding boxes of the tracked objects.')
-parser.add_argument('--format', '-f', help='The format of the pictures to be saved from result of the tracking. default: png')
-parser.add_argument('--make_video', '-m', help='If True, a video will be created from the saved resultant images.')
+parser.add_argument('--format', '-f', defualt='png', help='The format of the pictures to be saved from result of the tracking. default: png')
+parser.add_argument('--make_video', '-m', help='If True, a video will be created from the saved resultant images. Default: False')
 parser.add_argument('--from_center', default='False', help='If True, the bounding box will be drawn from center. Defualt: False')
 
 args = parser.parse_args()
@@ -40,20 +40,16 @@ if args.output_file is None:
 else:
     output_file = args.output_file
 
-if args.format is None:
-    format_ = 'png'
-else:
-    format_ = args.format
-    if format_[0] == '.':
-        format_ = format_[1:]
+format_ = args.format
+if format_[0] == '.':
+    format_ = format_[1:]
 
-if args.make_video is None:
+if args.make_video.lower() == 'false':
     make_video = False
+elif args.make_video.lower() == 'true':
+    make_video = True
 else:
-    if args.make_video.lower() == 'true':
-        make_video = True
-    elif args.make_video.lower() == 'false':
-        make_video = False
+    raise Exception('Invalid argument for --make_video option. Must be either True or False.')
 
 
 try:
