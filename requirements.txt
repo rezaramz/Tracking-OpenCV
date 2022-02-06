@@ -1,7 +1,4 @@
 numpy
 opencv-contrib-python == 4.5.5.62
 pandas
-shutil
-argparse
-os
 moviepy == 1.0.3
