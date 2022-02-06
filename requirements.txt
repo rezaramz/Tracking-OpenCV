@@ -4,3 +4,4 @@ pandas
 shutil
 argparse
 os
+moviepy == 1.0.3
