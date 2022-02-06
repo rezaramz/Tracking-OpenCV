@@ -24,7 +24,7 @@ def random_color_generator(n: int):
 parser = argparse.ArgumentParser(description='Object tracking program. Author: Mohammadreza Ramzanpour')
 parser.add_argument('--input_video', '-i', help='The path to the input video file.')
 parser.add_argument('--output_file', '-o', help='The output file which contains the bounding boxes of the tracked objects.')
-parser.add_argument('--format', '-f', defualt='png', help='The format of the pictures to be saved from result of the tracking. default: png')
+parser.add_argument('--format', '-f', default='png', help='The format of the pictures to be saved from result of the tracking. default: png')
 parser.add_argument('--make_video', '-m', help='If True, a video will be created from the saved resultant images. Default: False')
 parser.add_argument('--from_center', default='False', help='If True, the bounding box will be drawn from center. Defualt: False')
 
