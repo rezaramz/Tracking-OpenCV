@@ -7,3 +7,7 @@
 ```
 python --help
 ```
+
+```
+python --input_video foo.mp4 --output_file bar.csv --format png --make_video False --from_center False
+```
