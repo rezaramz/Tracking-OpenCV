@@ -1,7 +1,5 @@
 # Tracking-OpenCV
 
-\section{Hello}
+## Multiple tracking and calibration is implemented.
 
-\begin{equation}
-x^{2} - sin(x) = 1.0
-\end{equation}
+###### Run the tracking.py which is the main script. To install the requirements, run "pip install -r requirements.txt"
