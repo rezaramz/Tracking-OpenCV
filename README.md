@@ -5,9 +5,9 @@
 ###### Run the `tracking.py` which is the main script. To install the requirements, run `pip install -r requirements.txt`
 
 ```
-python --help
+python tracking.py --help
 ```
 
 ```
-python --input_video foo.mp4 --output_file bar.csv --format png --make_video False --from_center False
+python tracking.py --input_video foo.mp4 --output_file bar.csv --format png --make_video False --from_center False
 ```
